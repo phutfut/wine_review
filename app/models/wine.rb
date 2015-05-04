@@ -1,7 +1,7 @@
 class Wine < ActiveRecord::Base
-
   VARIETALS = ['Merlot', 'Chianti', 'Pinot Noir', 'Cabernet', 'Pinot Grigio']
 
+  has_many :logentries, dependent: :destroy
   validates :name, :year, :country, presence: true
 
   validates :year,

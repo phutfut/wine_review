@@ -1,0 +1,16 @@
+<header>Log Entry for <%= link_to(@wine.name, @wine) %></header>
+<ol id="logentries">
+  <% @logentries.each do |logentry| %>
+    <li>
+      <span class="rating"><%= logentry.rating %></span>
+      <span class="user">by <%= logentry.name %> </span>
+      <span class="tasted on">
+        <%= time_ago_in_words(logentry.tasted_on) %> ago
+      </span>
+      <p>
+        &quot;<%= logentry.comments %>&quot;
+      </p>
+    </li>
+  <% end %>
+</ol>
+<%= link_to 'Write a Log Entry', new_wine_logentry_path(@wine) %>

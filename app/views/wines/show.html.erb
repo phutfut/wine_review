@@ -9,6 +9,12 @@
   <p><label>Varietal:</label> <%= @wine.varietal %></p>
 </article>
 
+<p>
+  Read all
+  <%= link_to pluralize(@wine.logentries.size, 'logentry'),
+                        wine_logentries_path(@wine) %>
+</p>
+
 <%= link_to 'Edit Wine', edit_wine_path %>
 <%= button_to 'Delete', @wine,
               method: :delete,
