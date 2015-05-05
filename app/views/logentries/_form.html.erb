@@ -2,13 +2,18 @@
   <%= render 'shared/validation_errors', object: @logentry %>
 
   <%= f.label :name %>
-  <%= f.text_field :name, autofocus: true, placeholder: 'Name' %><br />
+  <%= f.text_field :name, autofocus: true, placeholder: 'Name' %><br /><br/>
   <%= f.label :rating %>
   <% Logentry::RATING.each do |rating| %>
     <%= f.radio_button :rating, rating %> <%= rating %>
-  <% end %><br />
+  <% end %><br /><br/>
+  <%= f.label :location %>
+  <%= f.text_field :location %><br /><br/>
   <%= f.label :comments %><br/>
-  <%= f.text_area :comments %><br/>
+  <%= f.text_area :comments %><br/><br/>
+  <%= f.label :tasted_on %>
+  <%= f.date_select(:tasted_on) %><br/><br/>
+
   <p>
     <%= f.submit %>
     <%= link_to 'Cancel', wine_logentries_path(@wine), id: 'cancel_logentry' %>

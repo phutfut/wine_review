@@ -10,4 +10,8 @@ class Wine < ActiveRecord::Base
 
   validates :varietal,
     inclusion: VARIETALS
+
+  def average_ratings
+    logentries.average(:rating)
+  end
 end

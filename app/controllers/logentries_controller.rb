@@ -25,7 +25,7 @@ class LogentriesController < ApplicationController
   end
 
   def logentry_params
-    params.require(:logentry).permit(:name, :comment);
+    params.require(:logentry).permit(:name, :rating, :location, :comments, :tasted_on);
   end
 
 end
